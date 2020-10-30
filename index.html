@@ -4,20 +4,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gil's Portion!</title>
+  <title>Family Planner</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
   <!-- link for the css -->
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <header>
-  <section class="hero is-primary">
+  <section class="hero is-medium is-info is-bold">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">
+        <h1 class="title has-text-centered has-text-white">
           Family Planner
-        </h1>
-        <h2 class="subtitle">
+        </h1> 
+        <h2 class="subtitle has-text-centered">
           Created by: Korey, Jon, Gil, and Kai
         </h2>
         <!-- <div class="container"></div> -->
@@ -43,23 +43,41 @@
     </div>
   </div>-->
 <div class="container">
-  <div class="rbc-calendar">
-    <div class="rbc-toolbar">
-      <span class="rbc-btn-group">
-        <button type="button">Today</button>
-        <button type="button">Back</button>
-        <button type="button">Next</button>
-      </span>
-      <span class="rbc-toolbar-label">2020 October</span>
-      <span class="rbc-btn-grou">
-        <button type="button" class="rbc-active">Month</button>
-        <button type="button" class>Week</button>
-        <button type="button" class>Work Week</button>
-        <button type="button" class="rbc-active">Month</button>
-        <button type="button" class="rbc-active">Month</button>
-      </span>
+  <div class="rbc-toolbar">
+    <div class="buttons has-addons is-centered mt-5">
+      <button class="button is-info is-outlined">Back</button>
+      <button class="button is-info is-outlined">Today</button>
+      <button class="button is-info is-outlined">Next</button>
+      <button class="button is-info is-outlined">Week</button>
+      <button class="button is-info is-outlined">Month</button>
     </div>
-    <div class="rbc-month-view">
+  </div>
+    <div class="columns mt-5">
+      <div class="column">
+        Sunday
+      </div>
+      <div class="column">
+        Monday
+      </div>
+      <div class="column">
+        Tuesday
+      </div>
+      <div class="column">
+        Wednesday
+      </div>
+      <div class="column">
+        Thursday
+      </div>
+      <div class="column">
+        Friday
+      </div>
+      <div class="column">
+        Saturday
+      </div>
+    </div>
+
+
+    <!--<div class="rbc-month-view">
       <div class="rbc-row rbc-month-header">
         <div class="rbc-header">
           <span>Sun</span>
@@ -271,8 +289,7 @@
               </button>
             </div>
           </div>
-        </div>
-        <!-- this is just a temporary script, make sure to put the right api. -->
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> -->
+        </div> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
         </body>
 </html>
