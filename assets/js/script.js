@@ -65,6 +65,7 @@ function holiday(dateFormatted) {
         holidayReturn.push(holidayObject);
       }
     });
+  console.log(holidayReturn);
 }
 
 holiday();
