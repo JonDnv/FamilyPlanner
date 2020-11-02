@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New</title>
+    <title>User Settings</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
 </head>
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -27,7 +29,7 @@
         <a class="navbar-item" href="./newevent.html">
           New Event
         </a>
-  
+
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
           </a>
@@ -44,7 +46,88 @@
       </div>
       </div>
     </nav>
-<body>
-    <h1>test</h1>
-</body>
-</html>
+    
+    <body>
+        <div style="margin-top: 50px; margin-left:25%; margin-right:25%;" class="container">
+            <div class="notification is-input">
+              <strong>New Event </strong>
+            </div>
+
+            <div class="field">
+                <label class="label">Select Day</label>
+                <div class="control">
+                  <div id="day-options" class="select">
+                    <select>
+                      <option>Monday</option>
+                      <option>Tuesday</option>
+                      <option>Wednesday</option>
+                      <option>Thursday</option>
+                      <option>Friday</option>
+                      <option>Saturday</option>
+                      <option>Sunday</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Select Time</label>
+                <div class="control">
+                  <div id="time-options" class="select">
+                    <select>
+                      <option>7:00 a.m.</option>
+                      <option>8:00 a.m.</option>
+                      <option>9:00 a.m.</option>
+                      <option>10:00 a.m.</option>
+                      <option>11:00 a.m.</option>
+                      <option>12:00 p.m.</option>
+                      <option>1:00 p.m.</option>
+                      <option>2:00 p.m.</option>
+                      <option>3:00 p.m.</option>
+                      <option>4:00 p.m.</option>
+                      <option>5:00 p.m.</option>
+                      <option>6:00 p.m.</option>
+                      <option>7:00 p.m.</option>
+                      <option>8:00 p.m.</option>
+                      <option>9:00 p.m.</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Select Duration</label>
+                <div class="control">
+                  <div id="duration-options" class="select">
+                    <select>
+                        <option>15 minutes</option>
+                        <option>30 minutes</option>
+                        <option>1 hour</option>
+                        <option>3 hours</option>
+                        <option>3 hours</option>
+                        <option>4 hours</option>
+                        <option>5 hours</option>
+                        <option>6 hours</option>
+                        <option>7 hours</option>
+                        <option>8 hours</option>
+                        <option>All Day</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Event</label>
+                <div class="control">
+                  <textarea id="event-description" class="textarea" placeholder="Description"></textarea>
+            </div>
+                </div>
+                <button style="margin-top: 30px;" id="event-btn-submit" class="button is-info">Submit</button>
+                </div>
+            </div>
+        </div>
+        </div>
+                
+    </body>
+
+    </html>
