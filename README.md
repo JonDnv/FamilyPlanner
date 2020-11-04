@@ -25,8 +25,11 @@ THEN the user can make determinations if the chores or events are well scheduled
 
 ## Mock Up
 
-The following image shows the finished site:
-![Website]()
+The following images shows the finished site:
+![Landing Page]()
+![Day Planner Page]()
+![Settings Page]()
+![Event Creation Page]()
 
 ---
 
@@ -52,4 +55,7 @@ The following image shows the finished site:
 
  1. Created Shell html, js, css & README files
  2. Created GitHub Pages site
- 3. 
+ 3. Created Settings & Event Creation Pages
+ 4. Created JS to Save Weather & Holiday Info Per Date
+ 5. Updated Day Planner HTML
+ 6. Created Landing Page HTML

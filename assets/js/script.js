@@ -128,8 +128,8 @@ function toLocalDate(unixTime) {
 }
 
 //Open Weather API
-var cityName = "denver";
-var stateName = "colorado";
+var cityName = "";
+var stateName = "";
 var lattitude = "";
 var longitude = "";
 var key = "c2b19ce1b72a2b30136891642cb070b5";
