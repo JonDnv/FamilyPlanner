@@ -1,93 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settings</title>
-    <link rel="icon" type="image/png" href="./assets/favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings</title>
+  <link rel="icon" type="image/png" href="./assets/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
 </head>
 <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="./indexnew.html">
-        <img src="./assets/FamilyPlannerIcon.png" width="140" height="56">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="./indexnew.html">
+      <img src="./assets/FamilyPlannerIcon.png" width="140" height="56">
+    </a>
+
+    <div class="navbar-item has-dropdown is-hoverable">
+      <a class="navbar-link">
       </a>
-  
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-  
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="./settings.html">
-          Settings
+
+      <div class="navbar-dropdown">
+        <a class="navbar-item" href="./planner.html">
+          Planner
         </a>
-  
         <a class="navbar-item" href="./newevent.html">
           New Event
         </a>
-
-        <a class="navbar-item" href="#">
-            Planner
-          </a>
-
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-          </a>
-
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="./settings.html">
-              Settings
-            </a>
-            <a class="navbar-item" href="./newevent.html">
-              New Event
-            </a>
-            </a>
-            <a class="navbar-item" href="#">
-            Planner
-            </a>
-          </div>
-
-        </div>
+        </a>
+        <a class="navbar-item" href="./settings.html">
+          Settings
+        </a>
       </div>
-      </div>
-    </nav>
+
+    </div>
+  </div>
+  </div>
+</nav>
+
 <body>
-    <div style="margin-top: 80px; margin-left:25%; margin-right:25%;" class="container">
-        <div class="notification has-background-info has-text-white-bis">
-          <strong>New User</strong>
-        </div>
-        <div class="field">
-            <div style="margin-top: 10px;" class="control">
-              <input id="user-name" class="input is-info" type="text" placeholder="Name">
-            </div>
-            <div style="margin-top: 10px;" class="control">
-                <input id="user-city" class="input is-info" type="text" placeholder="City">
-              </div>
-              <div style="margin-top: 10px;" class="control">
-                <input id="user-state" class="input is-info" type="text" placeholder="State">
-              </div>
-              <button id="new-user-btn-submit" style="margin-top: 30px;" class="button is-info">Submit</button>
-              </div>
+  <div style="margin-top: 40px; margin-left:25%; margin-right:25%;" class="container">
+    <div class="notification has-background-info has-text-white-bis">
+      <strong>Site Settings</strong>
+    </div>
+    <div class="field">
+      <div style="margin-top: 10px;" class="control">
+        <input id="siteCity" class="input is-info" type="text" placeholder="City" name="siteCity">
+      </div>
+      <div style="margin-top: 10px;" class="control">
+        <input id="siteState" class="input is-info" type="text" placeholder="State (Full Name)" name="siteState">
+      </div>
+      <button id="site-settings-btn-submit" style="margin-top: 30px;" class="button is-info">Submit Site
+        Settings</button>
+    </div>
 
-    <article style="margin-top:70px" class="message is-info">
-        <div class="message-body">
-            <h1><strong>Current Users</strong></h1>
-            <p>Name</p>
-            <p>Name</p>
-            <p>Name</p>
-            <p>Name</p>
-            <p>Name</p>
+    <article style="margin-top: 20px" class="message is-info">
+      <div class="message-body">
+        <h1 class="location"><strong>Location</strong></h1>
+      </div>
     </article>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>    
+
+    <div class="notification has-background-info has-text-white-bis">
+      <strong>New User</strong>
+    </div>
+    <div class="field">
+      <div style="margin-top: 10px;" class="control">
+        <input id="user-name" class="input is-info" type="text" placeholder="Name" name="userName">
+      </div>
+      <button id="new-user-btn-submit" style="margin-top: 30px;" class="button is-info">Submit New User</button>
+    </div>
+
+    <article style="margin-top:20px" class="message is-info">
+      <div class="message-body">
+        <h1 class="users"><strong>Users</strong></h1>
+        
+      </div>
+    </article>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 <div>
-<footer style="margin-top:100px" class="footer has-fixed-bottom">
+  <footer style="margin-top:75px" class="footer has-fixed-bottom">
     <div class="content has-text-centered">
       <p>
         © 2020 Quantum Bits
@@ -95,4 +96,5 @@
     </div>
   </footer>
 </div>
+
 </html>

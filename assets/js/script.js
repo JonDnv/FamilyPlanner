@@ -134,6 +134,14 @@ var lattitude = "";
 var longitude = "";
 var key = "c2b19ce1b72a2b30136891642cb070b5";
 
+if (localStorage.getItem("siteCity") === null) {
+  cityName = "Denver";
+  stateName = "Colorado";
+} else {
+  cityName = localStorage.getItem("siteCity");
+  stateName = localStorage.getItem("siteState");
+}
+
 function weatherBalloon(city, state) {
   fetch(
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -199,5 +207,108 @@ function weatherBalloon(city, state) {
     });
 }
 
-holiday();
-weatherBalloon(cityName, stateName);
+var siteCity = $("#siteCity");
+var siteState = $("#siteState");
+var userName = $("#user-name");
+var userColor;
+var userBadge = document.querySelector(".users");
+
+$("#site-settings-btn-submit").click(function () {
+  localStorage.setItem("siteCity", siteCity.val());
+  localStorage.setItem("siteState", siteState.val());
+  $("input[name=siteCity]").val("");
+  $("input[name=siteState]").val("");
+
+  var citySettingsDisplay = $("<p>");
+  citySettingsDisplay.text("City: " + localStorage.getItem("siteCity"));
+  $(".location").append(citySettingsDisplay);
+
+  var stateSettingsDisplay = $("<p>");
+  stateSettingsDisplay.text("State: " + localStorage.getItem("siteState"));
+  $(".location").append(stateSettingsDisplay);
+});
+
+var colorArray;
+colorArray = [
+  "#EC7063",
+  "#A569BD",
+  "#5DADE2",
+  "#58D68D",
+  "#DC7633",
+  "#5D6D7E",
+  "#943126",
+  "#5B2C6F",
+  "#21618C",
+  "#0E6655",
+  "#A04000",
+  "#717D7E",
+  "#212F3D",
+];
+
+var userObject = [];
+if (JSON.parse(localStorage.getItem("userNames") !== null)) {
+  userObject = JSON.parse(localStorage.getItem("userNames"));
+} else {
+  userObject = [];
+}
+
+$("#new-user-btn-submit").click(function () {
+  var iColor = userObject.length;
+  userColor = colorArray[iColor];
+
+  userObject.push({
+    name: userName.val(),
+    color: userColor,
+  });
+
+  var userObj = JSON.stringify(userObject);
+  localStorage.setItem("userNames", userObj);
+  $("input[name=userName]").val("");
+
+  $(".users").empty();
+
+  for (i = 0; i < userObject.length; i++) {
+    $(".users").append(
+      '<p class="userBadge"><span class="userBox" style="padding:2px;color:white;background-color:' +
+        userObject[i].color +
+        '">' +
+        userObject[i].name +
+        "</span></p>"
+    );
+  }
+});
+
+
+
+window.addEventListener("load", function () {
+  holiday();
+  weatherBalloon(cityName, stateName);
+
+  var citySettingsDisplay = $("<p>");
+  citySettingsDisplay.text("City: " + localStorage.getItem("siteCity"));
+  $(".location").append(citySettingsDisplay);
+
+  var stateSettingsDisplay = $("<p>");
+  stateSettingsDisplay.text("State: " + localStorage.getItem("siteState"));
+  $(".location").append(stateSettingsDisplay);
+
+  for (i = 0; i < userObject.length; i++) {
+    $(".users").append(
+      '<p class="userBadge"><span class="userBox" style="padding:2px;color:white;background-color:' +
+        userObject[i].color +
+        '">' +
+        userObject[i].name +
+        "</span></p>"
+    );
+  }
+
+  for (i = 0; i < userObject.length; i++) {
+    $(".userDropdown").append(
+      '<option id="' +
+        userObject[i].name +
+        '">' +
+        userObject[i].name +
+        "</option>"
+    );
+  }
+});
