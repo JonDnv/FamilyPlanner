@@ -75,8 +75,6 @@ var weekdayArray = [
   },
 ];
 
-console.log(weekdayArray);
-
 //Holiday API Fetch
 var holidayObject = {};
 var holidayReturn = [];
@@ -278,11 +276,93 @@ $("#new-user-btn-submit").click(function () {
   }
 });
 
+function addWeatherMain() {
+  $(".plannerHead").empty();
+  $(".plannerHead").append("<th></th>");
 
+  for (i = 0; i < weekdayArray.length; i++) {
+    if (weekdayArray[i].dateDay === "sun") {
+      $(".plannerHead").append(
+        '<th class="tableHead sunTableHead">Sunday\n' +
+          weekdayArray[i].dateDisp +
+          "<br>" +
+          '<a href="./weatherSun.html"><img src="' +
+          weekdayArray[i].weather.icon +
+          '"></img></a>' +
+          "</th>"
+      );
+    } else if (weekdayArray[i].dateDay === "mon") {
+      $(".plannerHead").append(
+        '<th class="tableHead monTableHead">Mondqy\n' +
+          weekdayArray[i].dateDisp +
+          "<br>" +
+          '<a href="./weatherMon.html"><img src="' +
+          weekdayArray[i].weather.icon +
+          '"></img></a>' +
+          "</th>"
+      );
+    } else if (weekdayArray[i].dateDay === "tue") {
+      $(".plannerHead").append(
+        '<th class="tableHead tueTableHead">Tuesday\n' +
+          weekdayArray[i].dateDisp +
+          "<br>" +
+          '<a href="./weatherTue.html"><img src="' +
+          weekdayArray[i].weather.icon +
+          '"></img></a>' +
+          "</th>"
+      );
+    } else if (weekdayArray[i].dateDay === "wed") {
+      $(".plannerHead").append(
+        '<th class="tableHead wedTableHead">Wednesday\n' +
+          weekdayArray[i].dateDisp +
+          "<br>" +
+          '<a href="./weatherWed.html"><img src="' +
+          weekdayArray[i].weather.icon +
+          '"></img></a>' +
+          "</th>"
+      );
+    } else if (weekdayArray[i].dateDay === "thu") {
+      $(".plannerHead").append(
+        '<th class="tableHead thuTableHead">Thursday\n' +
+          weekdayArray[i].dateDisp +
+          "<br>" +
+          '<a href="./weatherThu.html"><img src="' +
+          weekdayArray[i].weather.icon +
+          '"></img></a>' +
+          "</th>"
+      );
+    } else if (weekdayArray[i].dateDay === "fri") {
+      $(".plannerHead").append(
+        '<th class="tableHead friTableHead">Friday\n' +
+          weekdayArray[i].dateDisp +
+          "<br>" +
+          '<a href="./weatherFri.html"><img src="' +
+          weekdayArray[i].weather.icon +
+          '?weekday=fri"></img></a>' +
+          "</th>"
+      );
+    } else if (weekdayArray[i].dateDay === "sat") {
+      $(".plannerHead").append(
+        '<th class="tableHead satTableHead">Saturday\n' +
+          weekdayArray[i].dateDisp +
+          "<br>" +
+          '<a href="./weatherSat.html"><img src="' +
+          weekdayArray[i].weather.icon +
+          '"></img></a>' +
+          "</th>"
+      );
+    }
+  }
+}
+
+console.log(weekdayArray);
+console.log(weekdayArray[0].weather);
 
 window.addEventListener("load", function () {
-  holiday();
+  // holiday();
   weatherBalloon(cityName, stateName);
+
+  addWeatherMain();
 
   var citySettingsDisplay = $("<p>");
   citySettingsDisplay.text("City: " + localStorage.getItem("siteCity"));
