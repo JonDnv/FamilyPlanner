@@ -59,3 +59,4 @@ The following images shows the finished site:
  4. Created JS to Save Weather & Holiday Info Per Date
  5. Updated Day Planner HTML
  6. Created Landing Page HTML
+ 7. Updated Planner Page HTML

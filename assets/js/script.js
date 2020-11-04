@@ -278,6 +278,8 @@ $("#new-user-btn-submit").click(function () {
   }
 });
 
+
+
 window.addEventListener("load", function () {
   holiday();
   weatherBalloon(cityName, stateName);
@@ -297,6 +299,16 @@ window.addEventListener("load", function () {
         '">' +
         userObject[i].name +
         "</span></p>"
+    );
+  }
+
+  for (i = 0; i < userObject.length; i++) {
+    $(".userDropdown").append(
+      '<option id="' +
+        userObject[i].name +
+        '">' +
+        userObject[i].name +
+        "</option>"
     );
   }
 });
