@@ -18,39 +18,23 @@
       <a class="navbar-item" href="./index.html">
         <img src="./assets/FamilyPlannerIcon.png" width="112" height="28">
       </a>
-
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-        data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="./settings.html">
-          Settings
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
         </a>
 
-        <a class="navbar-item" href="./newevent.html">
-          New Event
-        </a>
-
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="./planner.html">
+            Planner
           </a>
-
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="./settings.html">
-              Settings
-            </a>
-            <a class="navbar-item" href="./newevent.html">
-              New Event
-            </a>
-          </div>
+          <a class="navbar-item" href="./newevent.html">
+            New Event
+          </a>
+          <a class="navbar-item" href="./settings.html">
+            Settings
+          </a>
         </div>
       </div>
+    </div>
     </div>
   </nav>
   <section class="hero is-primary is-info is-bold">
@@ -60,234 +44,218 @@
           Family Planner
         </h1>
         <h2 class="subtitle has-text-centered">
-          A simple planner to manage family life
+          A Simple Planner To Manage Family Life
         </h2>
-        <!-- <div class="container"></div> -->
       </div>
+    </div>
+  </section>
 </header>
 </body>
 
-<div class="container">
-  <div class="rbc-toolbar">
-    <div class="buttons has-addons is-centered mt-5">
-      <button class="button is-info is-outlined">Back</button>
-      <button class="button is-info is-outlined">Today</button>
-      <button class="button is-info is-outlined">Next</button>
-      <button class="button is-info is-outlined">Week</button>
-      <button class="button is-info is-outlined">Month</button>
-    </div>
+<table class="center plannerTable">
+  <thead>
+    <tr class="plannerHead">
+      <th></th>
+      <th class="tableHead sunTableHead"></th>
+      <th class="tableHead monTableHead">Mon</th>
+      <th class="tableHead tueTableHead">Tue</th>
+      <th class="tableHead wedTableHead">Wed</th>
+      <th class="tableHead thuTableHead">Thu</th>
+      <th class="tableHead friTableHead">Fri</th>
+      <th class="tableHead satTableHead">Sat</th>
+    </tr>
+  </thead>
   </div>
-  <table class="center">
-    <thead>
-      <tr>
-        <th class="left">Time of The Day</th>
-        <th>Sunday</th>
 
-        <th>Monday</th>
-        <th>Tuesday</th>
-        <th>Wednesday</th>
-        <th>Thursday</th>
-        <th>Friday</th>
-        <th>Saturday</th>
+
+
+  <div class="rbc-month-row">
+    <div class="rbc-row-bg">
+      <div class="rbc-day-bg rbc-off-range-bg"></div>
+      <div class="rbc-day-bg rbc-off-range-bg"></div>
+      <div class="rbc-day-bg"></div>
+      <div class="rbc-day-bg"></div>
+      <div class="rbc-day-bg"></div>
+      <div class="rbc-day-bg"></div>
+      <div class="rbc-day-bg"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <tbody>
+      <tr>
+        <td class="left">Holidays</td>
+        <td class="holidaySun"></td>
+        <td class="holidayMon"></td>
+        <td class="holidayTue"></td>
+        <td class="holidayWed"></td>
+        <td class="holidayThu"></td>
+        <td class="holidayFri"></td>
+        <td class="holidaySat"></td>
+      </tr>
+      <tr>
+        <td class="left">7:00 AM</td>
+        <td class="sun7"></td>
+        <td class="mon7"></td>
+        <td class="tue7"></td>
+        <td class="wed7"></td>
+        <td class="thu7"></td>
+        <td class="fri7"></td>
+        <td class="sat7"></td>
+      </tr>
+      <tr>
+        <td class="left">8:00 AM</td>
+        <td class="sun8"></td>
+        <td class="mon8"></td>
+        <td class="tue8"></td>
+        <td class="wed8"></td>
+        <td class="thu8"></td>
+        <td class="fri8"></td>
+        <td class="sat8"></td>
+      </tr>
+      <tr>
+        <td class="left">9:00 AM</td>
+        <td class="sun9"></td>
+        <td class="mon9"></td>
+        <td class="tue9"></td>
+        <td class="wed9"></td>
+        <td class="thu9"></td>
+        <td class="fri9"></td>
+        <td class="sat9"></td>
 
       </tr>
-    </thead>
+      <tr>
+        <td class="left">10:00 AM</td>
+        <td class="sun10"></td>
+        <td class="mon10"></td>
+        <td class="tue10"></td>
+        <td class="wed10"></td>
+        <td class="thu10"></td>
+        <td class="fri10"></td>
+        <td class="sat10"></td>
+      </tr>
+      <tr>
+        <td class="left">11:00 AM</td>
+        <td class="sun11"></td>
+        <td class="mon11"></td>
+        <td class="tue11"></td>
+        <td class="wed11"></td>
+        <td class="thu11"></td>
+        <td class="fri11"></td>
+        <td class="sat11"></td>
+
+      </tr>
+      <tr>
+        <td class="left">12:00 PM</td>
+        <td class="sun12"></td>
+        <td class="mon12"></td>
+        <td class="tue12"></td>
+        <td class="wed12"></td>
+        <td class="thu12"></td>
+        <td class="fri12"></td>
+        <td class="sat12"></td>
+      </tr>
+      <tr>
+        <td class="left">1:00 PM</td>
+        <td class="sun13"></td>
+        <td class="mon13"></td>
+        <td class="tue13"></td>
+        <td class="wed13"></td>
+        <td class="thu13"></td>
+        <td class="fri13"></td>
+        <td class="sat13"></td>
+      </tr>
+      <tr>
+        <td class="left">2:00 AM</td>
+        <td class="sun14"></td>
+        <td class="mon14"></td>
+        <td class="tue14"></td>
+        <td class="wed14"></td>
+        <td class="thu14"></td>
+        <td class="fri14"></td>
+        <td class="sat14"></td>
+      </tr>
+      <tr>
+        <td class="left">3:00 PM</td>
+        <td class="sun15"></td>
+        <td class="mon15"></td>
+        <td class="tue15"></td>
+        <td class="wed15"></td>
+        <td class="thu15"></td>
+        <td class="fri15"></td>
+        <td class="sat15"></td>
+      </tr>
+      <tr>
+        <td class="left">4:00 PM</td>
+        <td class="sun16"></td>
+        <td class="mon16"></td>
+        <td class="tue16"></td>
+        <td class="wed16"></td>
+        <td class="thu16"></td>
+        <td class="fri16"></td>
+        <td class="sat16"></td>
+      </tr>
+      <tr>
+        <td class="left">5:00 PM</td>
+        <td class="sun17"></td>
+        <td class="mon17"></td>
+        <td class="tue17"></td>
+        <td class="wed17"></td>
+        <td class="thu17"></td>
+        <td class="fri17"></td>
+        <td class="sat17"></td>
+      </tr>
+      <tr>
+        <td class="left">6:00 PM</td>
+        <td class="sun18"></td>
+        <td class="mon18"></td>
+        <td class="tue18"></td>
+        <td class="wed18"></td>
+        <td class="thu18"></td>
+        <td class="fri18"></td>
+        <td class="sat18"></td>
+      </tr>
+      <tr>
+        <td class="left">7:00 PM</td>
+        <td class="sun19"></td>
+        <td class="mon19"></td>
+        <td class="tue19"></td>
+        <td class="wed19"></td>
+        <td class="thu19"></td>
+        <td class="fri19"></td>
+        <td class="sat19"></td>
+      </tr>
+      <tr>
+        <td class="left">8:00 PM</td>
+        <td class="sun20"></td>
+        <td class="mon20"></td>
+        <td class="tue20"></td>
+        <td class="wed20"></td>
+        <td class="thu20"></td>
+        <td class="fri20"></td>
+        <td class="sat20"></td>
+      </tr>
+      <tr>
+        <td class="left">9:00 PM</td>
+        <td class="sun21"></td>
+        <td class="mon21"></td>
+        <td class="tue21"></td>
+        <td class="wed21"></td>
+        <td class="thu21"></td>
+        <td class="fri21"></td>
+        <td class="sat21"></td>
+      </tr>
+    </tbody>
 
 
+</table>
 </div>
-
-
-
-<div class="rbc-month-row">
-  <div class="rbc-row-bg">
-    <div class="rbc-day-bg rbc-off-range-bg"></div>
-    <div class="rbc-day-bg rbc-off-range-bg"></div>
-    <div class="rbc-day-bg"></div>
-    <div class="rbc-day-bg"></div>
-    <div class="rbc-day-bg"></div>
-    <div class="rbc-day-bg"></div>
-    <div class="rbc-day-bg"></div>
-  </div>
-  <br>
-  <br>
-  <br>
-  <tbody>
-    <tr>
-      <td class="left">07:00 AM</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td class="Left">08:00 AM</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td class="Left">09:00 AM</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-
-    </tr>
-    <tr>
-      <td class="Left">10:00 AM</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td class="Left">11:00 AM</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-
-    </tr>
-    <tr>
-      <td class="Left">12:00 PM</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td class="Left">01:00 PM</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td class="Left">02:00 AM</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td class="Left">03:00 PM</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td class="Left">04:00 PM</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td class="Left">05:00 PM</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td class="Left">06:00 PM</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td class="Left">07:00 PM</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td class="Left">08:00 PM</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td class="Left">09:00 PM</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
-
-
-  </table>
-</div>
-<div class="rbc-row">
-  <div class="rbc-date-cell">
-    <div class="rbc-row-segment" style="flex-basis: 57.14285714285714%; max-width: 57.14285714285714%;"></div>
-    <div class="rbc-row-segment" style="flex-basis: 14.285714285714285%; max-width: 14.285714285714285%;">
-      <button class="rbc-event">
-        <div class="rbc-event-content" title="Today">Today</div>
-      </button>
-    </div>
-    <!-- <div class="rbc-row">
-          <div class="rbc-date-cell">
-            <div class="rbc-row-segment" style="flex-basis: 57.14285714285714%; max-width: 57.14285714285714%;"></div>
-            <div class="rbc-row-segment" style="flex-basis: 14.285714285714285%; max-width: 14.285714285714285%;">
-              <button class="rbc-event">
-                <div class="rbc-event-content" title="Today">Today</div>
-              </button>
-            </div> -->
-  </div>
 </div>
 </table>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="./assets/js/script.js"></script>
 </body>

@@ -8,7 +8,7 @@ This application will utilize server-side APIs to forecast the weather and help 
 
 ## Requirements
 
-GIVEN a family planner site with modal inputs \
+GIVEN a family planner site with settings & event inputs \
 WHEN a user adds a family member \
 THEN the user can create scheduled events and chores for that family member \
 WHEN events and chores are added, they are entered onto a shared calendar \
@@ -59,4 +59,4 @@ The following images shows the finished site:
  4. Created JS to Save Weather & Holiday Info Per Date
  5. Updated Day Planner HTML
  6. Created Landing Page HTML
- 7. Updated Planner Page HTML
+ 7. Updated Planner Page Table Design & Header

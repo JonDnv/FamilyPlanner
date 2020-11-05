@@ -88,8 +88,6 @@ var weekdayArray = [
   },
 ];
 
-console.log(weekdayArray);
-
 //Holiday API Fetch
 var holidayObject = {};
 var holidayReturn = [];
@@ -292,8 +290,10 @@ $("#new-user-btn-submit").click(function () {
 });
 
 window.addEventListener("load", function () {
-  holiday();
+  // holiday();
   weatherBalloon(cityName, stateName);
+
+  addWeatherMain();
 
   var citySettingsDisplay = $("<p>");
   citySettingsDisplay.text("City: " + localStorage.getItem("siteCity"));
