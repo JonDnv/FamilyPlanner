@@ -355,8 +355,8 @@ function addWeatherMain() {
   }
 }
 
-console.log(weekdayArray);
-console.log(weekdayArray[0].weather);
+// console.log(weekdayArray);
+// console.log(weekdayArray[0].weather);
 
 window.addEventListener("load", function () {
   // holiday();
