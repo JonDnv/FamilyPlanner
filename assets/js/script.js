@@ -25,15 +25,15 @@ var year = moment().year();
 var eventTextArea = document.querySelector("#event-description");
 var submitButton = document.querySelector("#event-btn-submit");
 
-// submitButton.addEventListener("click", function () {
-//   // create user object from submission
-//   var event = {
-//     // daySelect: daySelectInput.value.trim(),
-//     eventText: eventTextArea.value.trim(),
-//   };
-//   localStorage.setItem("event", JSON.stringify(event));
-//   console.log(event);
-// });
+submitButton.addEventListener("click", function () {
+  // create user object from submission
+  var event = {
+    // daySelect: daySelectInput.value.trim(),
+    eventText: eventTextArea.value.trim(),
+  };
+  localStorage.setItem("event", JSON.stringify(event));
+  console.log(event);
+});
 
 //Object Declaration
 var weekdayArray = [
