@@ -137,6 +137,7 @@ function holiday() {
           }
         }
       }
+      addHolidayMain(weekdayArray);
     });
 }
 
@@ -222,6 +223,7 @@ function weatherBalloon(city, state) {
               }
             }
           }
+          addWeatherMain(weekdayArray);
         });
     });
 }
@@ -237,6 +239,8 @@ $("#site-settings-btn-submit").click(function () {
   localStorage.setItem("siteState", siteState.val());
   $("input[name=siteCity]").val("");
   $("input[name=siteState]").val("");
+
+  $(".location").empty();
 
   var citySettingsDisplay = $("<p>");
   citySettingsDisplay.text("City: " + localStorage.getItem("siteCity"));
@@ -297,14 +301,14 @@ $("#new-user-btn-submit").click(function () {
   }
 });
 
-function addWeatherMain() {
+function addWeatherMain(weekdayArray) {
   $(".plannerHead").empty();
   $(".plannerHead").append("<th></th>");
 
   for (i = 0; i < weekdayArray.length; i++) {
     if (weekdayArray[i].dateDay === "sun") {
       $(".plannerHead").append(
-        '<th class="tableHead sunTableHead">Sunday\n' +
+        '<th class="tableHead sunTableHead">Sunday<br>' +
           weekdayArray[i].dateDisp +
           "<br>" +
           '<a href="./weatherSun.html"><img src="' +
@@ -314,7 +318,7 @@ function addWeatherMain() {
       );
     } else if (weekdayArray[i].dateDay === "mon") {
       $(".plannerHead").append(
-        '<th class="tableHead monTableHead">Monday\n' +
+        '<th class="tableHead monTableHead">Monday<br>' +
           weekdayArray[i].dateDisp +
           "<br>" +
           '<a href="./weatherMon.html"><img src="' +
@@ -324,7 +328,7 @@ function addWeatherMain() {
       );
     } else if (weekdayArray[i].dateDay === "tue") {
       $(".plannerHead").append(
-        '<th class="tableHead tueTableHead">Tuesday\n' +
+        '<th class="tableHead tueTableHead">Tuesday<br>' +
           weekdayArray[i].dateDisp +
           "<br>" +
           '<a href="./weatherTue.html"><img src="' +
@@ -334,7 +338,7 @@ function addWeatherMain() {
       );
     } else if (weekdayArray[i].dateDay === "wed") {
       $(".plannerHead").append(
-        '<th class="tableHead wedTableHead">Wednesday\n' +
+        '<th class="tableHead wedTableHead">Wednesday<br>' +
           weekdayArray[i].dateDisp +
           "<br>" +
           '<a href="./weatherWed.html"><img src="' +
@@ -344,7 +348,7 @@ function addWeatherMain() {
       );
     } else if (weekdayArray[i].dateDay === "thu") {
       $(".plannerHead").append(
-        '<th class="tableHead thuTableHead">Thursday\n' +
+        '<th class="tableHead thuTableHead">Thursday<br>' +
           weekdayArray[i].dateDisp +
           "<br>" +
           '<a href="./weatherThu.html"><img src="' +
@@ -354,7 +358,7 @@ function addWeatherMain() {
       );
     } else if (weekdayArray[i].dateDay === "fri") {
       $(".plannerHead").append(
-        '<th class="tableHead friTableHead">Friday\n' +
+        '<th class="tableHead friTableHead">Friday<br>' +
           weekdayArray[i].dateDisp +
           "<br>" +
           '<a href="./weatherFri.html"><img src="' +
@@ -364,7 +368,7 @@ function addWeatherMain() {
       );
     } else if (weekdayArray[i].dateDay === "sat") {
       $(".plannerHead").append(
-        '<th class="tableHead satTableHead">Saturday\n' +
+        '<th class="tableHead satTableHead">Saturday<br>' +
           weekdayArray[i].dateDisp +
           "<br>" +
           '<a href="./weatherSat.html"><img src="' +
@@ -376,102 +380,72 @@ function addWeatherMain() {
   }
 }
 
-console.log(weekdayArray[0]);
-console.log(weekdayArray[0].weather);
-console.log(weekdayArray[0].weather.icon);
-
-console.log(weekdayArray[0]);
-console.log(weekdayArray[0].holiday);
-console.log(weekdayArray[0].holiday.length);
-console.log(weekdayArray[0].holiday[0]);
-// console.log(weekdayArray[0].holiday);
-function addHolidayMain() {
+function addHolidayMain(weekdayArray) {
   $(".holidayMain").empty();
-  $(".holidayMain").append('<th class="left">Holidays</th>');
+  $(".holidayMain").append('<td class="left">Holidays</td>');
 
   for (i = 0; i < weekdayArray.length; i++) {
-    if (
-      weekdayArray[i].dateDay === "sun" //&&
-      //weekdayArray[i].holiday.length > 0
-    ) {
-      $(".holidayMain").append("<td>" + weekdayArray[i].holiday[0]);
-      $(".holidayMain").append("</td>");
-      console.log(weekdayArray[i].holiday);
-      console.log(weekdayArray[i].holiday.length);
-      console.log(weekdayArray[i].holiday[0]);
+    if (weekdayArray[i].dateDay === "sun") {
+      var holidayList = "";
+      for (j = 0; j < weekdayArray[i].holiday.length; j++) {
+        holidayList = holidayList + weekdayArray[i].holiday[j] + "<br>";
+      }
+      $(".holidayMain").append("<td>" + holidayList + "</td>");
     }
 
-    // else if (weekdayArray[i].dateDay === "mon") {
-    //     $(".holidayMain").append(
-    //       '<th class="tableHead monTableHead">Monday\n' +
-    //         weekdayArray[i].dateDisp +
-    //         "<br>" +
-    //         '<a href="./weatherMon.html"><img src="' +
-    //         weekdayArray[i].weather.icon +
-    //         '"></img></a>' +
-    //         "</th>"
-    //     );
-    //   } else if (weekdayArray[i].dateDay === "tue") {
-    //     $(".holidayMain").append(
-    //       '<th class="tableHead tueTableHead">Tuesday\n' +
-    //         weekdayArray[i].dateDisp +
-    //         "<br>" +
-    //         '<a href="./weatherTue.html"><img src="' +
-    //         weekdayArray[i].weather.icon +
-    //         '"></img></a>' +
-    //         "</th>"
-    //     );
-    //   } else if (weekdayArray[i].dateDay === "wed") {
-    //     $(".holidayMain").append(
-    //       '<th class="tableHead wedTableHead">Wednesday\n' +
-    //         weekdayArray[i].dateDisp +
-    //         "<br>" +
-    //         '<a href="./weatherWed.html"><img src="' +
-    //         weekdayArray[i].weather.icon +
-    //         '"></img></a>' +
-    //         "</th>"
-    //     );
-    //   } else if (weekdayArray[i].dateDay === "thu") {
-    //     $(".holidayMain").append(
-    //       '<th class="tableHead thuTableHead">Thursday\n' +
-    //         weekdayArray[i].dateDisp +
-    //         "<br>" +
-    //         '<a href="./weatherThu.html"><img src="' +
-    //         weekdayArray[i].weather.icon +
-    //         '"></img></a>' +
-    //         "</th>"
-    //     );
-    //   } else if (weekdayArray[i].dateDay === "fri") {
-    //     $(".holidayMain").append(
-    //       '<th class="tableHead friTableHead">Friday\n' +
-    //         weekdayArray[i].dateDisp +
-    //         "<br>" +
-    //         '<a href="./weatherFri.html"><img src="' +
-    //         weekdayArray[i].weather.icon +
-    //         '?weekday=fri"></img></a>' +
-    //         "</th>"
-    //     );
-    //   } else if (weekdayArray[i].dateDay === "sat") {
-    //     $(".holidayMain").append(
-    //       '<th class="tableHead satTableHead">Saturday\n' +
-    //         weekdayArray[i].dateDisp +
-    //         "<br>" +
-    //         '<a href="./weatherSat.html"><img src="' +
-    //         weekdayArray[i].weather.icon +
-    //         '"></img></a>' +
-    //         "</th>"
-    //     );
-    //   }
-    // }
+    if (weekdayArray[i].dateDay === "mon") {
+      var holidayList = "";
+      for (j = 0; j < weekdayArray[i].holiday.length; j++) {
+        holidayList = holidayList + weekdayArray[i].holiday[j] + "<br>";
+      }
+      $(".holidayMain").append("<td>" + holidayList + "</td>");
+    }
+
+    if (weekdayArray[i].dateDay === "tue") {
+      var holidayList = "";
+      for (j = 0; j < weekdayArray[i].holiday.length; j++) {
+        holidayList = holidayList + weekdayArray[i].holiday[j] + "<br>";
+      }
+      $(".holidayMain").append("<td>" + holidayList + "</td>");
+    }
+
+    if (weekdayArray[i].dateDay === "wed") {
+      var holidayList = "";
+      for (j = 0; j < weekdayArray[i].holiday.length; j++) {
+        holidayList = holidayList + weekdayArray[i].holiday[j] + "<br>";
+      }
+      $(".holidayMain").append("<td>" + holidayList + "</td>");
+    }
+
+    if (weekdayArray[i].dateDay === "thu") {
+      var holidayList = "";
+      for (j = 0; j < weekdayArray[i].holiday.length; j++) {
+        holidayList = holidayList + weekdayArray[i].holiday[j] + "<br>";
+      }
+      $(".holidayMain").append("<td>" + holidayList + "</td>");
+    }
+
+    if (weekdayArray[i].dateDay === "fri") {
+      var holidayList = "";
+      for (j = 0; j < weekdayArray[i].holiday.length; j++) {
+        holidayList = holidayList + weekdayArray[i].holiday[j] + "<br>";
+      }
+      $(".holidayMain").append("<td>" + holidayList + "</td>");
+    }
+
+    if (weekdayArray[i].dateDay === "sat") {
+      var holidayList = "";
+      for (j = 0; j < weekdayArray[i].holiday.length; j++) {
+        holidayList = holidayList + weekdayArray[i].holiday[j] + "<br>";
+      }
+      $(".holidayMain").append("<td>" + holidayList + "</td>");
+    }
   }
 }
 
 window.addEventListener("load", function () {
   holiday();
-  // weatherBalloon(cityName, stateName);
-
-  addWeatherMain();
-  addHolidayMain();
+  weatherBalloon(cityName, stateName);
 
   var citySettingsDisplay = $("<p>");
   citySettingsDisplay.text("City: " + localStorage.getItem("siteCity"));
