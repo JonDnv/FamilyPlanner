@@ -2,7 +2,7 @@
 
 ---
 
-This application will utilize server-side APIs to forecast the weather and help determine outdoor chores, activities and location. The application will be responsive and mobile-friendly utilizing a CSS framework. It is an easy planner that family members can collaborate to share schedules with each other. 
+This application will utilize server-side APIs to forecast the weather and help determine outdoor chores, activities and location. The application will be responsive and mobile-friendly utilizing a CSS framework. It is an easy planner that family members can collaborate to share schedules with each other.
 
 ---
 
@@ -26,10 +26,10 @@ THEN the user can make determinations if the chores or events are well scheduled
 ## Mock Up
 
 The following images shows the finished site:
-![Landing Page]()
+![Landing Page](./assets/Family-Planner_MainPage.png)
 ![Day Planner Page]()
-![Settings Page]()
-![Event Creation Page]()
+![Settings Page](./assets/SettingsPage.png)
+![Event Creation Page](./assets/New-Event-Page.png)
 
 ---
 
@@ -60,3 +60,6 @@ The following images shows the finished site:
  5. Updated Day Planner HTML
  6. Created Landing Page HTML
  7. Updated Planner Page Table Design & Header
+ 8. Added Weather Dashboard Pages
+ 9. Added Holiday Information to Planner Page Header
+ 10. Populated Planner Based on Event Creation
