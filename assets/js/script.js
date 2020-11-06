@@ -31,6 +31,7 @@ var duration = document.getElementById("durationValue");
 var appointmentDuration = duration.value;
 var eventTextArea = document.querySelector("#event-description");
 var submitButton = document.querySelector("#event-btn-submit");
+var eventArray = [];
 
 submitButton.addEventListener("click", function () {
   if (JSON.parse(localStorage.getItem("event") !== null)) {
@@ -448,6 +449,8 @@ function addHolidayMain(weekdayArray) {
     }
   }
 }
+
+
 
 window.addEventListener("load", function () {
   holiday();
