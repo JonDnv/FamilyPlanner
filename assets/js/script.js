@@ -25,15 +25,15 @@ var year = moment().year();
 var eventTextArea = document.querySelector("#event-description");
 var submitButton = document.querySelector("#event-btn-submit");
 
-submitButton.addEventListener("click", function () {
-  // create user object from submission
-  var event = {
-    // daySelect: daySelectInput.value.trim(),
-    eventText: eventTextArea.value.trim(),
-  };
-  localStorage.setItem("event", JSON.stringify(event));
-  console.log(event);
-});
+// submitButton.addEventListener("click", function () {
+//   // create user object from submission
+//   var event = {
+//     // daySelect: daySelectInput.value.trim(),
+//     eventText: eventTextArea.value.trim(),
+//   };
+//   localStorage.setItem("event", JSON.stringify(event));
+//   console.log(event);
+// });
 
 //Object Declaration
 var weekdayArray = [
@@ -369,13 +369,16 @@ function addWeatherMain() {
 }
 
 console.log(weekdayArray[0]);
-console.log(weekdayArray[0].weather);
+// console.log(typeof weekdayArray[0].weather);
+console.log(weekdayArray[0].weather.length);
+console.log(Object.keys(weekdayArray[0].weather));
 console.log(weekdayArray[0].weather.icon);
 
 console.log(weekdayArray[0]);
 console.log(weekdayArray[0].holiday);
 console.log(weekdayArray[0].holiday.length);
 console.log(weekdayArray[0].holiday[0]);
+
 // console.log(weekdayArray[0].holiday);
 function addHolidayMain() {
   $(".holidayMain").empty();
@@ -400,8 +403,8 @@ function addHolidayMain() {
     //         "<br>" +
     //         '<a href="./weatherMon.html"><img src="' +
     //         weekdayArray[i].weather.icon +
-    //         '"></img></a>' +
-    //         "</th>"
+    //         '"></img></a>'
+    //         "</th>"=
     //     );
     //   } else if (weekdayArray[i].dateDay === "tue") {
     //     $(".holidayMain").append(
@@ -460,10 +463,7 @@ function addHolidayMain() {
 
 window.addEventListener("load", function () {
   holiday();
-  // weatherBalloon(cityName, stateName);
-
-  addWeatherMain();
-  addHolidayMain();
+  weatherBalloon(cityName, stateName);
 
   var citySettingsDisplay = $("<p>");
   citySettingsDisplay.text("City: " + localStorage.getItem("siteCity"));
@@ -492,4 +492,7 @@ window.addEventListener("load", function () {
         "</option>"
     );
   }
+
+  addWeatherMain();
+  addHolidayMain();
 });
