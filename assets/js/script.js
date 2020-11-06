@@ -22,34 +22,6 @@ var satForm = sat.format("YYYYMD");
 var satDisp = sat.format("M/D/YYYY");
 var year = moment().year();
 
-// variables for new event page
-var days = document.getElementById("dayValue");
-var daySelectInput = days.value;
-var time = document.getElementById("timeValue");
-var appointmentTime = time.value;
-var duration = document.getElementById("durationValue");
-var appointmentDuration = duration.value;
-var eventTextArea = document.querySelector("#event-description");
-var submitButton = document.querySelector("#event-btn-submit");
-var eventArray = [];
-
-submitButton.addEventListener("click", function () {
-  if (JSON.parse(localStorage.getItem("event") !== null)) {
-    eventArray = JSON.parse(localStorage.getItem("event"));
-  } else {
-    eventArray = [];
-  }
-  var event = {
-    daySelect: days.value,
-    timeSelect: time.value,
-    durSelect: duration.value,
-    eventText: eventTextArea.value.trim(),
-  };
-  eventArray.push(event);
-  localStorage.setItem("event", JSON.stringify(eventArray));
-  console.log(eventArray);
-});
-
 //Object Declaration
 var weekdayArray = [
   {
@@ -201,7 +173,7 @@ function weatherBalloon(city, state) {
         .then(function (oneCallData) {
           for (var i = 0; i < weekdayArray.length; i++) {
             for (var j = 0; j < oneCallData.daily.length; j++) {
-              if (weekdayArray[i].dateDisp < moment().format("M/D/YYY")) {
+              if (weekdayArray[i].dateDisp < moment().format("M/D/YYYY")) {
                 (weekdayArray[i].weather.date = weekdayArray[i].dateDisp),
                   (weekdayArray[i].weather.lowTemp = "N/A"),
                   (weekdayArray[i].weather.highTemp = "N/A"),
@@ -210,8 +182,7 @@ function weatherBalloon(city, state) {
                   (weekdayArray[i].weather.icon =
                     "https://openweathermap.org/img/wn/01n@2x.png");
               } else if (
-                weekdayArray[i].dateDisp ===
-                toLocalDate(oneCallData.daily[j].dt)
+                weekdayArray[i].dateDisp >= moment().format("M/D/YYYY")
               ) {
                 (weekdayArray[i].weather.date = toLocalDate(
                   oneCallData.daily[j].dt
@@ -231,6 +202,13 @@ function weatherBalloon(city, state) {
             }
           }
           addWeatherMain(weekdayArray);
+          weatherPagesSun(weekdayArray);
+          weatherPagesMon(weekdayArray);
+          weatherPagesTue(weekdayArray);
+          weatherPagesWed(weekdayArray);
+          weatherPagesThu(weekdayArray);
+          weatherPagesFri(weekdayArray);
+          weatherPagesSat(weekdayArray);
         });
     });
 }
@@ -450,7 +428,341 @@ function addHolidayMain(weekdayArray) {
   }
 }
 
+function weatherPagesSun(weekdayArray) {
+  if (weekdayArray[0].dateDisp >= moment().format("M/D/YYY")) {
+    $(".weatherLocation").append(
+      "<strong>Location: " +
+        localStorage.getItem("siteCity") +
+        ", " +
+        localStorage.getItem("siteState") +
+        "</strong>"
+    );
+    $(".sunWeatherDate").append(
+      "<strong>Date: " + weekdayArray[0].weather.date + "</strong>"
+    );
+    $(".sunHighTemp").append(
+      "<strong>High Temperature: " +
+        weekdayArray[0].weather.highTemp +
+        "º</strong>"
+    );
+    $(".sunLowTemp").append(
+      "<strong>Low Temperature: " +
+        weekdayArray[0].weather.lowTemp +
+        "º</strong>"
+    );
+    $(".sunWindSpeed").append(
+      "<strong>Wind Speed: " +
+        weekdayArray[0].weather.windSpeed +
+        " MPH</strong>"
+    );
+    $(".sunUvIndex").append(
+      "<strong>UV Index: " + weekdayArray[0].weather.uvIndex + "</strong>"
+    );
+  } else {
+    $(".weatherLocation").append(
+      "<strong>Location: " +
+        localStorage.getItem("siteCity") +
+        ", " +
+        localStorage.getItem("siteState") +
+        "</strong>"
+    );
+    $(".sunWeatherDate").append(
+      "<strong>Date: " + weekdayArray[0].weather.date + "</strong>"
+    );
+    $(".sunHighTemp").append(
+      "<strong>High Temperature: " +
+        weekdayArray[0].weather.highTemp +
+        "</strong>"
+    );
+    $(".sunLowTemp").append(
+      "<strong>Low Temperature: " +
+        weekdayArray[0].weather.lowTemp +
+        "</strong>"
+    );
+    $(".sunWindSpeed").append(
+      "<strong>Wind Speed: " + weekdayArray[0].weather.windSpeed + "</strong>"
+    );
+    $(".sunUvIndex").append(
+      "<strong>UV Index: " + weekdayArray[0].weather.uvIndex + "</strong>"
+    );
+  }
+}
 
+function weatherPagesMon(weekdayArray) {
+  if (weekdayArray[0].dateDisp >= moment().format("M/D/YYY")) {
+    $(".monWeatherDate").append(
+      "<strong>Date: " + weekdayArray[1].weather.date + "</strong>"
+    );
+    $(".monHighTemp").append(
+      "<strong>High Temperature: " +
+        weekdayArray[1].weather.highTemp +
+        "º</strong>"
+    );
+    $(".monLowTemp").append(
+      "<strong>Low Temperature: " +
+        weekdayArray[1].weather.lowTemp +
+        "º</strong>"
+    );
+    $(".monWindSpeed").append(
+      "<strong>Wind Speed: " +
+        weekdayArray[1].weather.windSpeed +
+        " MPH</strong>"
+    );
+    $(".monUvIndex").append(
+      "<strong>UV Index: " + weekdayArray[1].weather.uvIndex + "</strong>"
+    );
+  } else {
+    $(".monWeatherDate").append(
+      "<strong>Date: " + weekdayArray[1].weather.date + "</strong>"
+    );
+    $(".monHighTemp").append(
+      "<strong>High Temperature: " +
+        weekdayArray[1].weather.highTemp +
+        "</strong>"
+    );
+    $(".monLowTemp").append(
+      "<strong>Low Temperature: " +
+        weekdayArray[1].weather.lowTemp +
+        "</strong>"
+    );
+    $(".monWindSpeed").append(
+      "<strong>Wind Speed: " + weekdayArray[1].weather.windSpeed + "</strong>"
+    );
+    $(".monUvIndex").append(
+      "<strong>UV Index: " + weekdayArray[1].weather.uvIndex + "</strong>"
+    );
+  }
+}
+
+function weatherPagesTue(weekdayArray) {
+  if (weekdayArray[2].dateDisp >= moment().format("M/D/YYY")) {
+    $(".tueWeatherDate").append(
+      "<strong>Date: " + weekdayArray[2].weather.date + "</strong>"
+    );
+    $(".tueHighTemp").append(
+      "<strong>High Temperature: " +
+        weekdayArray[2].weather.highTemp +
+        "º</strong>"
+    );
+    $(".tueLowTemp").append(
+      "<strong>Low Temperature: " +
+        weekdayArray[2].weather.lowTemp +
+        "º</strong>"
+    );
+    $(".tueWindSpeed").append(
+      "<strong>Wind Speed: " +
+        weekdayArray[2].weather.windSpeed +
+        " MPH</strong>"
+    );
+    $(".tueUvIndex").append(
+      "<strong>UV Index: " + weekdayArray[2].weather.uvIndex + "</strong>"
+    );
+  } else {
+    $(".tueWeatherDate").append(
+      "<strong>Date: " + weekdayArray[2].weather.date + "</strong>"
+    );
+    $(".tueHighTemp").append(
+      "<strong>High Temperature: " +
+        weekdayArray[2].weather.highTemp +
+        "</strong>"
+    );
+    $(".tueLowTemp").append(
+      "<strong>Low Temperature: " +
+        weekdayArray[2].weather.lowTemp +
+        "</strong>"
+    );
+    $(".tueWindSpeed").append(
+      "<strong>Wind Speed: " + weekdayArray[2].weather.windSpeed + "</strong>"
+    );
+    $(".tueUvIndex").append(
+      "<strong>UV Index: " + weekdayArray[2].weather.uvIndex + "</strong>"
+    );
+  }
+}
+
+function weatherPagesWed(weekdayArray) {
+  if (weekdayArray[3].dateDisp >= moment().format("M/D/YYY")) {
+    $(".wedWeatherDate").append(
+      "<strong>Date: " + weekdayArray[3].weather.date + "</strong>"
+    );
+    $(".wedHighTemp").append(
+      "<strong>High Temperature: " +
+        weekdayArray[3].weather.highTemp +
+        "º</strong>"
+    );
+    $(".wedLowTemp").append(
+      "<strong>Low Temperature: " +
+        weekdayArray[3].weather.lowTemp +
+        "º</strong>"
+    );
+    $(".wedWindSpeed").append(
+      "<strong>Wind Speed: " +
+        weekdayArray[3].weather.windSpeed +
+        " MPH</strong>"
+    );
+    $(".wedUvIndex").append(
+      "<strong>UV Index: " + weekdayArray[3].weather.uvIndex + "</strong>"
+    );
+  } else {
+    $(".wedWeatherDate").append(
+      "<strong>Date: " + weekdayArray[3].weather.date + "</strong>"
+    );
+    $(".wedHighTemp").append(
+      "<strong>High Temperature: " +
+        weekdayArray[3].weather.highTemp +
+        "</strong>"
+    );
+    $(".wedLowTemp").append(
+      "<strong>Low Temperature: " +
+        weekdayArray[3].weather.lowTemp +
+        "</strong>"
+    );
+    $(".wedWindSpeed").append(
+      "<strong>Wind Speed: " + weekdayArray[3].weather.windSpeed + "</strong>"
+    );
+    $(".wedUvIndex").append(
+      "<strong>UV Index: " + weekdayArray[3].weather.uvIndex + "</strong>"
+    );
+  }
+}
+
+function weatherPagesThu(weekdayArray) {
+  if (weekdayArray[4].dateDisp >= moment().format("M/D/YYY")) {
+    $(".thuWeatherDate").append(
+      "<strong>Date: " + weekdayArray[4].weather.date + "</strong>"
+    );
+    $(".thuHighTemp").append(
+      "<strong>High Temperature: " +
+        weekdayArray[4].weather.highTemp +
+        "º</strong>"
+    );
+    $(".thuLowTemp").append(
+      "<strong>Low Temperature: " +
+        weekdayArray[4].weather.lowTemp +
+        "º</strong>"
+    );
+    $(".thuWindSpeed").append(
+      "<strong>Wind Speed: " +
+        weekdayArray[4].weather.windSpeed +
+        " MPH</strong>"
+    );
+    $(".thuUvIndex").append(
+      "<strong>UV Index: " + weekdayArray[4].weather.uvIndex + "</strong>"
+    );
+  } else {
+    $(".thuWeatherDate").append(
+      "<strong>Date: " + weekdayArray[4].weather.date + "</strong>"
+    );
+    $(".thuHighTemp").append(
+      "<strong>High Temperature: " +
+        weekdayArray[4].weather.highTemp +
+        "</strong>"
+    );
+    $(".thuLowTemp").append(
+      "<strong>Low Temperature: " +
+        weekdayArray[4].weather.lowTemp +
+        "</strong>"
+    );
+    $(".thuWindSpeed").append(
+      "<strong>Wind Speed: " + weekdayArray[4].weather.windSpeed + "</strong>"
+    );
+    $(".thuUvIndex").append(
+      "<strong>UV Index: " + weekdayArray[4].weather.uvIndex + "</strong>"
+    );
+  }
+}
+
+function weatherPagesFri(weekdayArray) {
+  if (weekdayArray[5].dateDisp >= moment().format("M/D/YYY")) {
+    $(".friWeatherDate").append(
+      "<strong>Date: " + weekdayArray[5].weather.date + "</strong>"
+    );
+    $(".friHighTemp").append(
+      "<strong>High Temperature: " +
+        weekdayArray[5].weather.highTemp +
+        "º</strong>"
+    );
+    $(".friLowTemp").append(
+      "<strong>Low Temperature: " +
+        weekdayArray[5].weather.lowTemp +
+        "º</strong>"
+    );
+    $(".friWindSpeed").append(
+      "<strong>Wind Speed: " +
+        weekdayArray[5].weather.windSpeed +
+        " MPH</strong>"
+    );
+    $(".friUvIndex").append(
+      "<strong>UV Index: " + weekdayArray[5].weather.uvIndex + "</strong>"
+    );
+  } else {
+    $(".friWeatherDate").append(
+      "<strong>Date: " + weekdayArray[5].weather.date + "</strong>"
+    );
+    $(".friHighTemp").append(
+      "<strong>High Temperature: " +
+        weekdayArray[5].weather.highTemp +
+        "</strong>"
+    );
+    $(".friLowTemp").append(
+      "<strong>Low Temperature: " +
+        weekdayArray[5].weather.lowTemp +
+        "</strong>"
+    );
+    $(".friWindSpeed").append(
+      "<strong>Wind Speed: " + weekdayArray[5].weather.windSpeed + "</strong>"
+    );
+    $(".friUvIndex").append(
+      "<strong>UV Index: " + weekdayArray[5].weather.uvIndex + "</strong>"
+    );
+  }
+}
+
+function weatherPagesSat(weekdayArray) {
+  if (weekdayArray[6].dateDisp >= moment().format("M/D/YYY")) {
+    $(".satWeatherDate").append(
+      "<strong>Date: " + weekdayArray[6].weather.date + "</strong>"
+    );
+    $(".satHighTemp").append(
+      "<strong>High Temperature: " +
+        weekdayArray[6].weather.highTemp +
+        "º</strong>"
+    );
+    $(".satLowTemp").append(
+      "<strong>Low Temperature: " +
+        weekdayArray[6].weather.lowTemp +
+        "º</strong>"
+    );
+    $(".satWindSpeed").append(
+      "<strong>Wind Speed: " +
+        weekdayArray[6].weather.windSpeed +
+        " MPH</strong>"
+    );
+    $(".satUvIndex").append(
+      "<strong>UV Index: " + weekdayArray[6].weather.uvIndex + "</strong>"
+    );
+  } else {
+    $(".satWeatherDate").append(
+      "<strong>Date: " + weekdayArray[6].weather.date + "</strong>"
+    );
+    $(".satHighTemp").append(
+      "<strong>High Temperature: " +
+        weekdayArray[6].weather.highTemp +
+        "</strong>"
+    );
+    $(".satLowTemp").append(
+      "<strong>Low Temperature: " +
+        weekdayArray[6].weather.lowTemp +
+        "</strong>"
+    );
+    $(".satWindSpeed").append(
+      "<strong>Wind Speed: " + weekdayArray[6].weather.windSpeed + "</strong>"
+    );
+    $(".satUvIndex").append(
+      "<strong>UV Index: " + weekdayArray[6].weather.uvIndex + "</strong>"
+    );
+  }
+}
 
 window.addEventListener("load", function () {
   holiday();
