@@ -428,6 +428,8 @@ function addHolidayMain(weekdayArray) {
   }
 }
 
+<<<<<<< HEAD
+=======
 function weatherPagesSun(weekdayArray) {
   if (weekdayArray[0].dateDisp >= moment().format("M/D/YYY")) {
     $(".weatherLocation").append(
@@ -764,8 +766,9 @@ function weatherPagesSat(weekdayArray) {
   }
 }
 
+>>>>>>> f40c25ffebe44bf459fb1d3764a1928be014cf49
 window.addEventListener("load", function () {
-  holiday();
+  // holiday();
   weatherBalloon(cityName, stateName);
 
   var citySettingsDisplay = $("<p>");
@@ -786,13 +789,13 @@ window.addEventListener("load", function () {
     );
   }
 
-  for (i = 0; i < userObject.length; i++) {
-    $(".userDropdown").append(
-      '<option id="' +
-        userObject[i].name +
-        '">' +
-        userObject[i].name +
-        "</option>"
-    );
-  }
+  // for (i = 0; i < userObject.length; i++) {
+  //   $(".userDropdown").append(
+  //     '<option id="' +
+  //       userObject[i].name +
+  //       '">' +
+  //       userObject[i].name +
+  //       "</option>"
+  //   );
+  // }
 });
