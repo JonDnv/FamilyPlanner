@@ -22,18 +22,26 @@ var satForm = sat.format("YYYYMD");
 var satDisp = sat.format("M/D/YYYY");
 var year = moment().year();
 
+var days = document.getElementById("dayValue");
+var daySelectInput = days.value;
+var time = document.getElementById("timeValue");
+var appointmentTime = time.value;
+var duration = document.getElementById("durationValue");
+var appointmentDuration = duration.value;
 var eventTextArea = document.querySelector("#event-description");
 var submitButton = document.querySelector("#event-btn-submit");
 
-// submitButton.addEventListener("click", function () {
-//   // create user object from submission
-//   var event = {
-//     // daySelect: daySelectInput.value.trim(),
-//     eventText: eventTextArea.value.trim(),
-//   };
-//   localStorage.setItem("event", JSON.stringify(event));
-//   console.log(event);
-// });
+submitButton.addEventListener("click", function () {
+  // create user object from submission
+  var event = {
+    daySelect: days.value,
+    timeSelect: time.value,
+    durSelect: duration.value,
+    eventText: eventTextArea.value.trim(),
+  };
+  localStorage.setItem("event", JSON.stringify(event));
+  console.log(event);
+});
 
 //Object Declaration
 var weekdayArray = [
