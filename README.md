@@ -27,7 +27,7 @@ THEN the user can make determinations if the chores or events are well scheduled
 
 The following images shows the finished site:
 ![Landing Page](./assets/Family-Planner_MainPage.png)
-![Day Planner Page]()
+![Day Planner Page](./assets/fam)
 ![Weather Dashboard](assets/Weather-Dashboard.png)
 ![Settings Page](./assets/SettingsPage.png)
 ![Event Creation Page](./assets/New-Event-Page.png)

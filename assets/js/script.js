@@ -88,7 +88,7 @@ var satHolidays = {};
 var holidayArray = [];
 
 var calendarificUrl =
-  "https://calendarific.com/api/v2/holidays?&api_key=6e8b6a09a801368154e03d7f4180f3f6e0a237ce&country=US&year=" +
+  "https://calendarific.com/api/v2/holidays?&api_key=d4094fea8d6540adf3bc6c96b0d70237256ffef0&country=US&year=" +
   year;
 
 function holiday() {
@@ -783,16 +783,6 @@ window.addEventListener("load", function () {
         '">' +
         userObject[i].name +
         "</span></p>"
-    );
-  }
-
-  for (i = 0; i < userObject.length; i++) {
-    $(".userDropdown").append(
-      '<option id="' +
-        userObject[i].name +
-        '">' +
-        userObject[i].name +
-        "</option>"
     );
   }
 });
