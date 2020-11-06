@@ -22,33 +22,6 @@ var satForm = sat.format("YYYYMD");
 var satDisp = sat.format("M/D/YYYY");
 var year = moment().year();
 
-var days = document.getElementById("dayValue");
-var daySelectInput = days.value;
-var time = document.getElementById("timeValue");
-var appointmentTime = time.value;
-var duration = document.getElementById("durationValue");
-var appointmentDuration = duration.value;
-var eventTextArea = document.querySelector("#event-description");
-var submitButton = document.querySelector("#event-btn-submit");
-var eventArray = [];
-
-submitButton.addEventListener("click", function () {
-  if (JSON.parse(localStorage.getItem("event") !== null)) {
-    eventArray = JSON.parse(localStorage.getItem("event"));
-  } else {
-    eventArray = [];
-  }
-  var event = {
-    daySelect: days.value,
-    timeSelect: time.value,
-    durSelect: duration.value,
-    eventText: eventTextArea.value.trim(),
-  };
-  eventArray.push(event);
-  localStorage.setItem("event", JSON.stringify(eventArray));
-  console.log(eventArray);
-});
-
 //Object Declaration
 var weekdayArray = [
   {
@@ -449,10 +422,8 @@ function addHolidayMain(weekdayArray) {
   }
 }
 
-
-
 window.addEventListener("load", function () {
-  holiday();
+  // holiday();
   weatherBalloon(cityName, stateName);
 
   var citySettingsDisplay = $("<p>");
@@ -473,13 +444,13 @@ window.addEventListener("load", function () {
     );
   }
 
-  for (i = 0; i < userObject.length; i++) {
-    $(".userDropdown").append(
-      '<option id="' +
-        userObject[i].name +
-        '">' +
-        userObject[i].name +
-        "</option>"
-    );
-  }
+  // for (i = 0; i < userObject.length; i++) {
+  //   $(".userDropdown").append(
+  //     '<option id="' +
+  //       userObject[i].name +
+  //       '">' +
+  //       userObject[i].name +
+  //       "</option>"
+  //   );
+  // }
 });
