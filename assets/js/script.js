@@ -88,7 +88,7 @@ var satHolidays = {};
 var holidayArray = [];
 
 var calendarificUrl =
-  "https://calendarific.com/api/v2/holidays?&api_key=6e8b6a09a801368154e03d7f4180f3f6e0a237ce&country=US&year=" +
+  "https://calendarific.com/api/v2/holidays?&api_key=d4094fea8d6540adf3bc6c96b0d70237256ffef0&country=US&year=" +
   year;
 
 function holiday() {
@@ -428,8 +428,6 @@ function addHolidayMain(weekdayArray) {
   }
 }
 
-<<<<<<< HEAD
-=======
 function weatherPagesSun(weekdayArray) {
   if (weekdayArray[0].dateDisp >= moment().format("M/D/YYY")) {
     $(".weatherLocation").append(
@@ -766,9 +764,8 @@ function weatherPagesSat(weekdayArray) {
   }
 }
 
->>>>>>> f40c25ffebe44bf459fb1d3764a1928be014cf49
 window.addEventListener("load", function () {
-  // holiday();
+  holiday();
   weatherBalloon(cityName, stateName);
 
   var citySettingsDisplay = $("<p>");
@@ -788,14 +785,4 @@ window.addEventListener("load", function () {
         "</span></p>"
     );
   }
-
-  // for (i = 0; i < userObject.length; i++) {
-  //   $(".userDropdown").append(
-  //     '<option id="' +
-  //       userObject[i].name +
-  //       '">' +
-  //       userObject[i].name +
-  //       "</option>"
-  //   );
-  // }
 });
